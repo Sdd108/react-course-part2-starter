@@ -1,13 +1,6 @@
 import { useState } from "react";
 import usePosts from "./hooks/usePosts";
 
-interface Post {
-  id: number;
-  title: string;
-  body: string;
-  userId: number;
-}
-
 const PostList = () => {
   const [page, setPage] = useState(1);
   const pageSize = 10;
