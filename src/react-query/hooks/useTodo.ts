@@ -18,6 +18,7 @@ const useTodos = () => {
     // Properties of query: data, error, isLoading, isError, refetch, etc.
     queryKey: ["todos"], // A unique identifier for the query, for caching purposes.  Can be set to an array with multiple values.
     queryFn: fetchTodos, // The function that fetches the data.
+    staleTime: 1000 * 10, // Data is considered fresh for 10 seconds.
   });
 }
 
