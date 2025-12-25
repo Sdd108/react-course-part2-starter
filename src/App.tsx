@@ -7,8 +7,9 @@ import TodoList from "./react-query/TodoList";
 function App() {
   return (
     <>
-      <TodoForm />
-      <TodoList />
+      {/* <TodoForm />
+      <TodoList /> */}
+      <PostList />
     </>
   );
 }

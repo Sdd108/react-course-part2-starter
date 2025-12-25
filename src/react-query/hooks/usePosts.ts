@@ -1,30 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-import postService, { type Post } from "../services/postService";
+import postService, {
+  type Post,
+  type PostsQuery,
+} from "../services/postService";
 
-
-interface PostQuery {
-  page: number;
-  pageSize: number;
-}
-
-const usePosts = (query: PostQuery) => {
-  const fetchPosts = () =>
-  axios
-    .get<Post[]>("https://jsonplaceholder.typicode.com/posts", {
-      params: {
-        _start: (query.page - 1) * query.pageSize,
-        _limit: query.pageSize
-      },
-    })
-    .then((res) => res.data);
-  
+const usePosts = (query: PostsQuery) => {
   return useQuery<Post[], Error>({
-    queryKey: ["users", query, "posts"],  // similar to URL pattern: /users/1/posts
-    queryFn: fetchPosts,
-    staleTime: 1 * 60 * 1000, // 1 min
-    keepPreviousData: true, // 获取下一页时，保持当前页内容直到获取下一页内容，然后瞬间替换
+    queryKey: ["users", query, "posts"],
+    queryFn: () => postService.getPaged(query),
+    staleTime: 60 * 1000,
+    keepPreviousData: true,
   });
-}
+};
 
 export default usePosts;
