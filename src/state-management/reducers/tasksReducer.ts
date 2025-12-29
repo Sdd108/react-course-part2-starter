@@ -22,7 +22,7 @@ const tasksReducer = (tasks: Task[], action: TaskAction): Task[] => {
     case "ADD":
       return [action.task, ...tasks];
     case "DELETE":
-      return tasks.filter(t => t.id !== action.taskId)
+      return tasks.filter(t => t.id !== action.taskId);
   }
 }
 
