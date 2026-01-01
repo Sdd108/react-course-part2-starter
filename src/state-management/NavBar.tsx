@@ -1,9 +1,7 @@
-import { LoginStatus } from "./auth";
+import { LoginStatus } from "./auth-zustand";
 import useCounterStore from "./counter/store";
-import { useTasks } from "./tasks";
 
 const NavBar = () => {
-  const { tasks } = useTasks();
   const { counter } = useCounterStore();
 
   return (
