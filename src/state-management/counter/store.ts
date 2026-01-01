@@ -1,4 +1,4 @@
-import {create} from 'zustand';
+import { create } from 'zustand';
 
 interface CounterStore {
   counter: number;
@@ -8,8 +8,12 @@ interface CounterStore {
 
 const useCounterStore = create<CounterStore>(set => ({
   counter: 0,
-  // In the set() function, no need to use spread operator to copy the other properties;
-  // set() will MERGE the updated value into our next state object.
+  /** In the set() function, no need to use spread operator to copy the other properties;
+   * set() will MERGE the updated value into our next state object.
+   * The set() function merges state at only one level.
+   * If you have a nested object, you need to merge them explicitly.
+   * You will use the spread operator pattern
+   */
   increment: () => set(store => ({counter: store.counter + 1})),
   reset: () => set(() => ({counter: 0}))
 }));
