@@ -1,5 +1,5 @@
-import LoginStatus from "./LoginStatus";
-import useTasks from "./tasks/useTasks";
+import { LoginStatus } from "./auth";
+import { useTasks } from "./tasks";
 
 const NavBar = () => {
   const { tasks } = useTasks();
