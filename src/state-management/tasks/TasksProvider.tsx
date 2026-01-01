@@ -6,6 +6,7 @@ export interface Task {
   title: string;
 }
 
+// Reducer
 interface AddTask {
   type: "ADD";
   task: Task;
@@ -27,6 +28,7 @@ const tasksReducer = (tasks: Task[], action: TaskAction): Task[] => {
   }
 };
 
+// Provider
 interface Props {
   children: ReactNode;
 }
