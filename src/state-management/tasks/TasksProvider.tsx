@@ -1,6 +1,11 @@
 import { ReactNode, useReducer } from "react";
 import TaskContext from "./tasksContext";
 
+/**
+ * Here TaskProvider is just an example demonstrating how to use React Context.
+ * In the real world application, the task is more of a server state and will be managed by React Query.
+ */
+
 export interface Task {
   id: number;
   title: string;
