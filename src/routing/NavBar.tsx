@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
+import LoginUser from "./LoginUser";
 
 const NavBar = () => {
   return (
@@ -35,6 +36,7 @@ const NavBar = () => {
           </ul>
         </div>
       </div>
+      <LoginUser />
     </nav>
   );
 };
