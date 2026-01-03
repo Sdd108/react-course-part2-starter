@@ -35,8 +35,8 @@ const NavBar = () => {
             </li>
           </ul>
         </div>
+        <LoginUser />
       </div>
-      <LoginUser />
     </nav>
   );
 };

@@ -11,10 +11,10 @@ interface AuthStore {
   logout: () => void;
 }
 
-const useAuth = create<AuthStore>((set) => ({
+const useAuthStore = create<AuthStore>((set) => ({
   user: null,
-  login: () => set({ user: { id: 1, name: "Mosh" } }),
+  login: () => set({ user: { id: 1, name: "Zhipeng Liu" } }),
   logout: () => set({ user: null }),
 }));
 
-export default useAuth;
+export default useAuthStore;

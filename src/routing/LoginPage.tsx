@@ -1,8 +1,8 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import useAuth from "./hooks/useAuth";
+import useAuthStore from "./store";
 
 const LoginPage = () => {
-  const { user, login, logout } = useAuth();
+  const { user, login, logout } = useAuthStore();
   const location = useLocation();
   const navigate = useNavigate();
 

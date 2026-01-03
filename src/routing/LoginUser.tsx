@@ -1,13 +1,13 @@
-import useAuth from "./hooks/useAuth";
+import useAuthStore from "./store";
 
 const LoginUser = () => {
-  const { user, login, logout } = useAuth();
+  const { user, login, logout } = useAuthStore();
 
   return (
     <div style={{ display: "flex", gap: "0.5rem", alignItems: "center" }}>
       {user ? (
         <>
-          <span>{user.name}</span>
+          <span>Hi, {user.name}</span>
           <a onClick={logout} href="#">
             Logout
           </a>
