@@ -6,6 +6,7 @@ const Layout = () => {
     <>
       <NavBar />
       <div id="main">
+        {/* This is the key! */}
         <Outlet />
       </div>
     </>
